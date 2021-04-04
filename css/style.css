@@ -53,3 +53,10 @@ button{
   padding: 1%;
   font-weight: 400;
 }
+
+#buttons-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
