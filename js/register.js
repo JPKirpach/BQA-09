@@ -41,22 +41,59 @@ function labelValidation(numberOfLabels){
 function changePageValidation(){
   var documentLinks = document.querySelectorAll('a');
   if(documentLinks.length == 2){
-    return true
+    return true;
   }
-  return true
+  return true;
 }
+
+var errors = [];
 
 requiredInputs = ['email', 'password', 'text'];
 
+numberOfLabels = 4;
 
+numberOfButtons = 2;
 
-
-for(i=0; i < requiredInputs.length; i++){
-  console.log(inputValidation(requiredInputs[i]));
+if(formValidation() == false){
+  errors.unshift('Form is not found.');
 }
 
-console.log(buttonValidation(2))
+if(confirmPass() == false){
+  errors.unshift('Password confirmation is missing.');
+}
 
-console.log(labelValidation(4))
+for(i=0; i < requiredInputs.length; i++){
+  if(inputValidation(requiredInputs[i]) == false){
+    errors.unshift('Input ' + requiredInputs[i] + ' is missing.');
+  }
+}
 
-console.log(changePageValidation())
+if(buttonValidation(numberOfButtons) == false){
+  errors.unshift('At least one button is missing.');
+}
+
+if(labelValidation(numberOfLabels) == false){
+  errors.unshift('At least one label is missing.');
+}
+
+if(changePageValidation() == false){
+  errors.unshift('The link to the other page is missing.');
+}
+
+var divResult = document.querySelector('#results');
+
+divResult.style.display = 'block';
+
+var listResults = document.getElementById('error-list');
+
+if(errors.length === 0){
+  var displayedText = document.createTextNode('Every validation has passed.')
+  listResults.appendChild(displayedText);
+}else{
+  for(var i = 0; i < errors.length; i++){
+    var displayedText = document.createTextNode(errors[i] + '\r');
+    listResults.appendChild(displayedText);
+  }
+}
+
+

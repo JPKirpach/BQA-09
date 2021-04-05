@@ -41,7 +41,7 @@ function changePageValidation(){
 
 var errors = [];
 
-requiredInputs = ['email', 'password', 'URL'];
+requiredInputs = ['email', 'password'];
 
 numberOfLabels = 2;
 
