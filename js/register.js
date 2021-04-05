@@ -48,6 +48,9 @@ function changePageValidation(){
 
 requiredInputs = ['email', 'password', 'text'];
 
+
+
+
 for(i=0; i < requiredInputs.length; i++){
   console.log(inputValidation(requiredInputs[i]));
 }

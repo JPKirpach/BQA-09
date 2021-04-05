@@ -60,3 +60,13 @@ button{
   justify-content: space-around;
   flex-direction: row;
 }
+
+
+#results{
+  display: none;
+  border: solid 3px #333333;
+  background-color: #e3f886;
+  width: 40%;
+  padding: 2%;
+  margin: auto;
+}
