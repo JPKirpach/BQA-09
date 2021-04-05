@@ -80,7 +80,7 @@ divResult.style.display = 'block';
 var listResults = document.getElementById('error-list');
 
 if(errors.length === 0){
-  var displayedText = document.createTextNode('Every validation has passed.')
+  var displayedText = document.createTextNode('Every validation has been passed.')
   listResults.appendChild(displayedText);
 }else{
   for(var i = 0; i < errors.length; i++){
